@@ -1,4 +1,4 @@
-package com.example.matemaatikaaitab;
+package com.example.matemaatik;
 
 import org.junit.Test;
 
