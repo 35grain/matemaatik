@@ -4,9 +4,23 @@ public class Random {
     private Equation equation;
 
     public Random(int upperLimit, int lowerLimit) {
-        Equation[] equations = new Equation[]{new Add(upperLimit, lowerLimit), new Subtract(upperLimit, lowerLimit),
-        new Multiply(upperLimit, lowerLimit), new Divide(upperLimit, lowerLimit), new Exponentiate(upperLimit, lowerLimit)};
-        this.equation = equations[(int) (Math.random() * equations.length)];
+        int choice = (int) (Math.random() * 5);
+        switch (choice) {
+            case 0:
+                this.equation = new Add(upperLimit, lowerLimit);
+                break;
+            case 1:
+                this.equation = new Subtract(upperLimit, lowerLimit);
+                break;
+            case 2:
+                this.equation = new Multiply(upperLimit, lowerLimit);
+                break;
+            case 3:
+                this.equation = new Divide(upperLimit, lowerLimit);
+                break;
+            case 4:
+                this.equation = new Exponentiate(upperLimit, lowerLimit);
+        }
     }
 
     public Equation getEquation() {
