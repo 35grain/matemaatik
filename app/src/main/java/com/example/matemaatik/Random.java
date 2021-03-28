@@ -5,7 +5,7 @@ public class Random {
 
     public Random(int upperLimit, int lowerLimit) {
         Equation[] equations = new Equation[]{new Add(upperLimit, lowerLimit), new Subtract(upperLimit, lowerLimit),
-        new Multiply(upperLimit, lowerLimit), new Divide(upperLimit, lowerLimit)};
+        new Multiply(upperLimit, lowerLimit), new Divide(upperLimit, lowerLimit), new Exponentiate(upperLimit, lowerLimit)};
         this.equation = equations[(int) (Math.random() * equations.length)];
     }
 
