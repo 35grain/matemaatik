@@ -1,4 +1,6 @@
-package com.example.matemaatik;
+package com.example.matemaatik.equations;
+
+import com.example.matemaatik.equations.Equation;
 
 public class Exponentiate extends Equation {
     public Exponentiate(int upperLimit, int lowerLimit) {

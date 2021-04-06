@@ -1,4 +1,4 @@
-package com.example.matemaatik;
+package com.example.matemaatik.equations;
 
 public class Divide extends Equation {
 

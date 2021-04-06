@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Matemaatika aitab</string>
+    <string name="lahendama">LAHENDAMA</string>
+    <string name="matemaatik">MATEMAATIK</string>
+    <string name="info">INFO</string>
+    <string name="logo">Logo</string>
+    <string name="liitmine">LIITMINE</string>
 </resources>
