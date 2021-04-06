@@ -12,7 +12,7 @@ public class Exponentiate extends Equation {
     }
 
     @Override
-    int getSolution() {
+    public int getSolution() {
         return (int) Math.pow(variableA, variableB);
     }
 

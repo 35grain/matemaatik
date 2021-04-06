@@ -17,5 +17,5 @@ public class Divide extends Equation {
     }
 
     @Override
-    int getSolution() { return variableA / variableB; }
+    public int getSolution() { return variableA / variableB; }
 }

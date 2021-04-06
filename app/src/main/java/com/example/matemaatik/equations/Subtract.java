@@ -19,7 +19,7 @@ public class Subtract extends Equation {
     }
 
     @Override
-    int getSolution() {
+    public int getSolution() {
         return variableA - variableB;
     }
 }

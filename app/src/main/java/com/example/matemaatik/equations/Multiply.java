@@ -19,7 +19,7 @@ public class Multiply extends Equation {
     }
 
     @Override
-    int getSolution() {
+    public int getSolution() {
         return variableA * variableB;
     }
 }

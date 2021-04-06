@@ -9,6 +9,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class ExerciseMenuActivity extends AppCompatActivity {
     GridLayout exerciseGrid;
@@ -33,7 +34,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         // Exercise menu grid layout
         exerciseGrid = (GridLayout) findViewById(R.id.exerciseGrid);
         setSingleEvent(exerciseGrid);
-
     }
 
     private void setSingleEvent(GridLayout exerciseGrid) {

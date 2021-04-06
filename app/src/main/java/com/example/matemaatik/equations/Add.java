@@ -17,7 +17,7 @@ public class Add extends Equation {
     }
 
     @Override
-    int getSolution() {
+    public int getSolution() {
         return variableA + variableB;
     }
 }

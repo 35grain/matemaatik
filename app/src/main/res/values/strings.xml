@@ -4,4 +4,5 @@
     <string name="info">INFO</string>
     <string name="logo">Logo</string>
     <string name="liitmine">LIITMINE</string>
+    <string name="testing">TextView</string>
 </resources>
