@@ -2,6 +2,7 @@
     <string name="lahendama">LAHENDAMA</string>
     <string name="matemaatik">MATEMAATIK</string>
     <string name="info">INFO</string>
+    <string name="info_desc">Matemaatik on Sinu isiklik matemaatika õpetaja, iga kell ja igas paigas Sinu jaoks olemas.</string>
     <string name="logo">Logo</string>
     <string name="liitmine">LIITMINE</string>
     <string name="testing">TextView</string>
