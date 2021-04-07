@@ -1,4 +1,4 @@
-package com.example.matemaatik;
+package com.example.matemaatik.equations;
 
 public abstract class Equation {
     protected int variableA;
@@ -6,7 +6,7 @@ public abstract class Equation {
     protected char eqSymbol;
 
     // Here variableA must always be in the first position as a parameter in an equation
-    abstract int getSolution();
+    public abstract int getSolution();
 
     // Equation specific method for generating appropriate variables for equation
     abstract int[] generateVars(int upperLimit, int lowerLimit);

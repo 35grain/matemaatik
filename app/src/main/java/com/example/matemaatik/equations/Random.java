@@ -1,4 +1,4 @@
-package com.example.matemaatik;
+package com.example.matemaatik.equations;
 
 public class Random {
     private Equation equation;

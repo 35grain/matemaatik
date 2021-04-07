@@ -1,4 +1,4 @@
-package com.example.matemaatik;
+package com.example.matemaatik.equations;
 
 public class Divide extends Equation {
 
@@ -17,5 +17,5 @@ public class Divide extends Equation {
     }
 
     @Override
-    int getSolution() { return variableA / variableB; }
+    public int getSolution() { return variableA / variableB; }
 }
