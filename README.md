@@ -1,3 +1,4 @@
-## Rakenduse eesmärk
-* Arendada matemaatilist mõtlemist mänguliselt ning kaasahaaraval viisil
-* Võimaldab aega veeta praktiliselt 
+![versioon](https://img.shields.io/badge/versioon-1.0.0_BETA-blue)
+
+## Kasutus
+* Lae alla rakendus ja naudi!
