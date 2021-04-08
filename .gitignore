@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+/APK-signature
+app/release
