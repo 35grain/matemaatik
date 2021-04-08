@@ -34,7 +34,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
         // list of 5 random adding exercises
         ArrayList<Equation> equations = new ArrayList<Equation>();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 10; i++) {
             equations.add(new Add(50, 2));
         }
 
@@ -58,10 +58,10 @@ public class ExerciseActivity extends AppCompatActivity {
 
             // changing output value
             public void nextExercise(boolean rightAnswer) {
-                if (rightAnswer & i < 4) {
+                if (rightAnswer & i < 10) {
                     score+=2;
                     i++;
-                    if (i >= 4)
+                    if (i >= 10)
                         toScorePage();
                     else {
                         textInputAnswer.setText("");
