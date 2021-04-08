@@ -2,7 +2,7 @@
 
 ## Kasutus
 * Lae alla rakendus ja naudi! 
-* Kui installeerimine ei õnnestu, luba **"Allow unknown sources" telefoni seadetes.**
+* Kui installeerimine ei õnnestu, luba **"Allow unknown sources"** telefoni seadetes.
 
 ## Projekti kirjeldus
 * [Wiki](https://github.com/35grain/matemaatik/wiki)
