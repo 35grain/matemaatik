@@ -1,23 +1,21 @@
-package com.example.matemaatik.equations;
+package ee.ratr.matemaatik.equations;
 
-public class Add extends Equation {
+public class Divide extends Equation {
 
-    public Add(int upperLimit, int lowerLimit) {
+    public Divide(int upperLimit, int lowerLimit) {
         int[] variables = generateVars(upperLimit, lowerLimit);
         variableA = variables[0];
         variableB = variables[1];
-        eqSymbol = '+';
+        eqSymbol = '÷';
     }
 
     @Override
     int[] generateVars(int upperLimit, int lowerLimit) {
-        int a = (int) (Math.random() * (upperLimit - lowerLimit)) + lowerLimit;
         int b = (int) (Math.random() * (upperLimit - lowerLimit)) + lowerLimit;
+        int a = b * ((int) (Math.random() * (upperLimit - lowerLimit)) + lowerLimit);
         return new int[]{a, b};
     }
 
     @Override
-    public int getSolution() {
-        return variableA + variableB;
-    }
+    public int getSolution() { return variableA / variableB; }
 }

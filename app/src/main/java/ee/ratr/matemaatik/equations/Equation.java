@@ -1,4 +1,4 @@
-package com.example.matemaatik.equations;
+package ee.ratr.matemaatik.equations;
 
 public abstract class Equation {
     protected int variableA;

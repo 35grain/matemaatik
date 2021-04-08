@@ -1,4 +1,4 @@
-package com.example.matemaatik;
+package ee.ratr.matemaatik;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import static com.google.android.material.internal.ContextUtils.getActivity;
+import ee.ratr.matemaatik.R;
 
 public class ExerciseScoreActivity extends AppCompatActivity {
     private int score;

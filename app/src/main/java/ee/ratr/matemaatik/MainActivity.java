@@ -1,4 +1,4 @@
-package com.example.matemaatik;
+package ee.ratr.matemaatik;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+
+import ee.ratr.matemaatik.R;
 
 public class MainActivity extends AppCompatActivity {
 

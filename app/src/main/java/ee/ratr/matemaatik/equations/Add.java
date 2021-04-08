@@ -1,14 +1,12 @@
-package com.example.matemaatik.equations;
+package ee.ratr.matemaatik.equations;
 
-import com.example.matemaatik.equations.Equation;
+public class Add extends Equation {
 
-public class Multiply extends Equation {
-
-    public Multiply(int upperLimit, int lowerLimit) {
+    public Add(int upperLimit, int lowerLimit) {
         int[] variables = generateVars(upperLimit, lowerLimit);
         variableA = variables[0];
         variableB = variables[1];
-        eqSymbol = 'x';
+        eqSymbol = '+';
     }
 
     @Override
@@ -20,6 +18,6 @@ public class Multiply extends Equation {
 
     @Override
     public int getSolution() {
-        return variableA * variableB;
+        return variableA + variableB;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.matemaatik;
+package ee.ratr.matemaatik;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
-import android.widget.TextView;
+
+import ee.ratr.matemaatik.R;
 
 public class ExerciseMenuActivity extends AppCompatActivity {
     GridLayout exerciseGrid;

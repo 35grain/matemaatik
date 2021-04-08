@@ -1,4 +1,4 @@
-package com.example.matemaatik.equations;
+package ee.ratr.matemaatik.equations;
 
 public class EquationTest {
     public static void main(String[] args) {

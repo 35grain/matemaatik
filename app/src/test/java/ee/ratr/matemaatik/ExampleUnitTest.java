@@ -1,4 +1,4 @@
-package com.example.matemaatik;
+package ee.ratr.matemaatik;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.matemaatik;
+package ee.ratr.matemaatik;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+
+import ee.ratr.matemaatik.R;
 
 public class InfoActivity extends AppCompatActivity {
 

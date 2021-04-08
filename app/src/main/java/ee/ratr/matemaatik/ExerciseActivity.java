@@ -1,4 +1,4 @@
-package com.example.matemaatik;
+package ee.ratr.matemaatik;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,8 +11,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.matemaatik.equations.Add;
-import com.example.matemaatik.equations.Equation;
+import ee.ratr.matemaatik.R;
+
+import ee.ratr.matemaatik.equations.Add;
+import ee.ratr.matemaatik.equations.Equation;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,4 @@
-package com.example.matemaatik.equations;
-
-import com.example.matemaatik.equations.Equation;
+package ee.ratr.matemaatik.equations;
 
 public class Subtract extends Equation {
 
