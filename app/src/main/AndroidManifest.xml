@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MatemaatikaAitab">
-        <activity android:name=".InfoActivity"></activity>
-        <activity android:name=".FinishedExerciseActivity" />
+        <activity android:name=".ExerciseScoreActivity"></activity>
+        <activity android:name=".InfoActivity" />
         <activity android:name=".ExerciseActivity" />
         <activity android:name=".ExerciseMenuActivity" />
         <activity android:name=".MainActivity">

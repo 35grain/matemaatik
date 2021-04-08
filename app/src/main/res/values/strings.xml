@@ -6,4 +6,15 @@
     <string name="logo">Logo</string>
     <string name="liitmine">LIITMINE</string>
     <string name="testing">TextView</string>
+    <string name="vasta">VASTA</string>
+    <string name="_0">0</string>
+    <string name="matemaatik_1_0_0_beta">Matemaatik 1.0.0 (beta)</string>
+    <string name="tagasi">TAGASI</string>
+    <string name="uuesti">UUESTI</string>
+    <string name="skoor">SKOOR</string>
+    <string name="lahutamine">LAHUTAMINE</string>
+    <string name="korrutamine">KORRUTAMINE</string>
+    <string name="jagamine">JAGAMINE</string>
+    <string name="astendamine">ASTENDAMINE</string>
+    <string name="juhuslik">JUHUSLIK</string>
 </resources>
