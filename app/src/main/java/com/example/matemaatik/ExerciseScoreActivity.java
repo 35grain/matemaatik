@@ -21,7 +21,6 @@ public class ExerciseScoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_score);
 
-
         score = ExerciseActivity.getInstance().getScore();
         Log.d("skoor", String.valueOf(score));
         TextView textViewChange = findViewById(R.id.userScoreDisplay);
@@ -34,6 +33,14 @@ public class ExerciseScoreActivity extends AppCompatActivity {
                 openExerciseMenu();
             }
         });
+
+        Button buttonAgain = (Button) findViewById(R.id.buttonAgain);
+        buttonAgain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                redoExercise();
+            }
+        });
     }
 
     public void openExerciseMenu() {
@@ -41,4 +48,8 @@ public class ExerciseScoreActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void redoExercise() {
+        Intent intent = new Intent(this, ExerciseActivity.class);
+        startActivity(intent);
+    }
 }
