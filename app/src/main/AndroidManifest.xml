@@ -10,9 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MatemaatikaAitab">
         <activity android:name=".ExerciseScoreActivity"></activity>
-        <activity android:name=".InfoActivity" />
+        <activity android:name=".InfoActivity" android:noHistory="true" />
         <activity android:name=".ExerciseActivity" />
-        <activity android:name=".ExerciseMenuActivity" />
+        <activity android:name=".ExerciseMenuActivity" android:noHistory="true" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

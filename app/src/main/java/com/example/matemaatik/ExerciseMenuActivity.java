@@ -52,10 +52,12 @@ public class ExerciseMenuActivity extends AppCompatActivity {
     private void backToLastPage() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
     private void toExercise() {
         Intent intent = new Intent(this, ExerciseActivity.class);
         startActivity(intent);
+        finish();
     }
 }

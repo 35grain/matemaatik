@@ -110,7 +110,9 @@ public class ExerciseActivity extends AppCompatActivity {
         if (!validateAnswer())
             return false;
         int answerInput = Integer.parseInt(textInputAnswer.getText().toString().trim());
-        return answerInput == userAnswer;
+        boolean correct = answerInput == userAnswer;
+        if (!correct) textInputAnswer.setError("Vale vastus!");
+        return correct;
     }
 
     public static ExerciseActivity getInstance() {

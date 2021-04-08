@@ -46,10 +46,12 @@ public class ExerciseScoreActivity extends AppCompatActivity {
     public void openExerciseMenu() {
         Intent intent = new Intent(this, ExerciseMenuActivity.class);
         startActivity(intent);
+        finish();
     }
 
     public void redoExercise() {
         Intent intent = new Intent(this, ExerciseActivity.class);
         startActivity(intent);
+        finish();
     }
 }
