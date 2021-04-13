@@ -5,7 +5,7 @@
 ## Kasutus
 * Lae alla rakendus ja naudi! 
 * Kui APK faili otsene installeerimine ei õnnestu, luba **"Allow unknown sources"** telefoni seadetes.
-* Üldjuhul soovitame rakenduse alla laadimiseks kasutada [Google Play-d](https://play.google.com/store/apps/details?id=ee.ratr.matemaatik)
+* Üldjuhul soovitame rakenduse allalaadimiseks kasutada [Google Play-d](https://play.google.com/store/apps/details?id=ee.ratr.matemaatik)
 
 ## Projekti kirjeldus
 * [Wiki](https://github.com/35grain/matemaatik/wiki)
