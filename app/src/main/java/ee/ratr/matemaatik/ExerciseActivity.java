@@ -1,10 +1,13 @@
 package ee.ratr.matemaatik;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -54,24 +57,40 @@ public class ExerciseActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                boolean rightAnswer = checkAnswer(equations.get(i).getSolution());
-                nextExercise(rightAnswer);
+                nextExercise();
             }
 
             // changing output value
-            public void nextExercise(boolean rightAnswer) {
-                if (rightAnswer & i < 10) {
-                    score+=2;
+            public void nextExercise() {
+                int solution = equations.get(i).getSolution();
+                if (validateAnswer()) {
                     i++;
-                    if (i >= 10)
-                        toScorePage();
-                    else {
-                        textInputAnswer.setText("");
-                        userScoreLive.setText(String.valueOf(score));
-                        textViewChange.setText(equations.get(i).toString());
+                    if (checkAnswer(solution)) {
+                        score+=2;
+                        if (i >= 10)
+                            toScorePage();
+                        else {
+                            textInputAnswer.setText("");
+                            userScoreLive.setText(String.valueOf(score));
+                            textViewChange.setText(equations.get(i).toString());
+                        }
+                    } else {
+                        // Show correct solution and temporarily disable buttons
+                        score--;
+                        answerButton.setEnabled(false);
+                        textInputAnswer.setError("Õige vastus oli: " + solution);
+                        // Wait 2 seconds and display next equation
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            public void run() {
+                                answerButton.setEnabled(true);
+                                textInputAnswer.setText("");
+                                textInputAnswer.setError(null);
+                                userScoreLive.setText(String.valueOf(score));
+                                textViewChange.setText(equations.get(i).toString());
+                            }
+                        }, 2000);
                     }
-                } else {
-                    score--;
                 }
             }
         });
@@ -81,7 +100,7 @@ public class ExerciseActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                backToLastPage();
+                onBackPressed();
             }
         });
     }
@@ -89,6 +108,33 @@ public class ExerciseActivity extends AppCompatActivity {
     private void backToLastPage() {
         Intent intent = new Intent(this, ExerciseMenuActivity.class);
         startActivity(intent);
+    }
+
+    public void onBackPressed() {
+        // Warn before returning to exercise menu
+        AlertDialog.Builder alertdialog=new AlertDialog.Builder(this);
+        alertdialog.setTitle("Hoiatus");
+        alertdialog.setMessage("Väljudes kaotad punktid. Kindel, et soovid väljuda?");
+        alertdialog.setPositiveButton("Jah", new DialogInterface.OnClickListener(){
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                backToLastPage();
+            }
+        });
+
+        alertdialog.setNegativeButton("Ei", new DialogInterface.OnClickListener(){
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+
+        });
+
+        AlertDialog alert=alertdialog.create();
+        alertdialog.show();
+
     }
 
     private void toScorePage() {
@@ -109,12 +155,8 @@ public class ExerciseActivity extends AppCompatActivity {
     }
 
     private boolean checkAnswer(int userAnswer) {
-        if (!validateAnswer())
-            return false;
         int answerInput = Integer.parseInt(textInputAnswer.getText().toString().trim());
-        boolean correct = answerInput == userAnswer;
-        if (!correct) textInputAnswer.setError("Vale vastus!");
-        return correct;
+        return answerInput == userAnswer;
     }
 
     public static ExerciseActivity getInstance() {
