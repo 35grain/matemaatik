@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         // button to Exercise Menu Activity
-        Button buttonToExerciseMenu = (Button) findViewById(R.id.buttonExerciseMenu);
+        Button buttonToExerciseMenu = findViewById(R.id.buttonExerciseMenu);
         buttonToExerciseMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // button to Info Activity
-        Button buttonToInfo = (Button) findViewById(R.id.buttonInfo);
+        Button buttonToInfo = findViewById(R.id.buttonInfo);
         buttonToInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,12 +41,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void openInfo() {
+    private void openInfo() {
         Intent intent = new Intent(this, InfoActivity.class);
         startActivity(intent);
     }
 
-    public void openExerciseMenu() {
+    private void openExerciseMenu() {
         Intent intent = new Intent(this, ExerciseMenuActivity.class);
         startActivity(intent);
     }

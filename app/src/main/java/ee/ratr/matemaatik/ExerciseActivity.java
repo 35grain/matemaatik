@@ -43,13 +43,18 @@ public class ExerciseActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        // list of 5 random adding exercises
+        // list of random adding exercises
+        int max = 3;
         ArrayList<Equation> equations = new ArrayList<Equation>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < max; i++) {
             equations.add(new Add(50, 2));
         }
 
         textInputAnswer = findViewById(R.id.answer);
+
+        // exercise counter default
+        TextView allExercises = findViewById(R.id.exAll);
+        allExercises.setText(Integer.toString(0) + " / " + max);
 
         // displaying first exercise
         TextView textViewChange = findViewById(R.id.addText);
@@ -73,9 +78,10 @@ public class ExerciseActivity extends AppCompatActivity {
                 int solution = equations.get(i).getSolution();
                 if (validateAnswer()) {
                     i++;
+                    allExercises.setText(Integer.toString(i) + " / " + max); // exercise counter
                     if (checkAnswer(solution)) {
                         score+=2;
-                        if (i >= 10)
+                        if (i >= max)
                             toScorePage();
                         else {
                             textInputAnswer.setText("");
@@ -84,24 +90,28 @@ public class ExerciseActivity extends AppCompatActivity {
                         }
                     } else {
                         // Show correct solution and temporarily disable buttons
-                        score--;
-                        answerButton.setEnabled(false);
-                        answerButton.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.danger)));
-                        textInputAnswer.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.danger));
-                        textInputAnswer.setError("Õige vastus oli: " + solution);
-                        // Wait 2 seconds and display next equation
-                        Handler handler = new Handler();
-                        handler.postDelayed(new Runnable() {
-                            public void run() {
-                                answerButton.setEnabled(true);
-                                answerButton.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.primary)));
-                                textInputAnswer.setTextColor(Color.WHITE);
-                                textInputAnswer.setText("");
-                                textInputAnswer.setError(null);
-                                userScoreLive.setText(String.valueOf(score));
-                                textViewChange.setText(equations.get(i).toString());
-                            }
-                        }, 2000);
+                        if (i >= max)
+                            toScorePage();
+                        else {
+                            score--;
+                            answerButton.setEnabled(false);
+                            answerButton.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.danger)));
+                            textInputAnswer.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.danger));
+                            textInputAnswer.setError("Õige vastus oli: " + solution);
+                            // Wait 2 seconds and display next equation
+                            Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                public void run() {
+                                    answerButton.setEnabled(true);
+                                    answerButton.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.primary)));
+                                    textInputAnswer.setTextColor(Color.WHITE);
+                                    textInputAnswer.setText("");
+                                    textInputAnswer.setError(null);
+                                    userScoreLive.setText(String.valueOf(score));
+                                    textViewChange.setText(equations.get(i).toString());
+                                }
+                            }, 2000);
+                        }
                     }
                 }
             }

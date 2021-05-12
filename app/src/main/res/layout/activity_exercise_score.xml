@@ -9,14 +9,13 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="297dp"
+        android:layout_height="283dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.337"
+        app:layout_constraintVertical_bias="0.238"
         app:srcCompat="@drawable/ic_progress_background"
         tools:ignore="VectorDrawableCompat" />
 
@@ -46,15 +45,15 @@
         android:textColor="#fff"
         android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <Button
         android:id="@+id/buttonAgain"
         android:layout_width="259dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="188dp"
+        android:layout_marginBottom="156dp"
         android:background="@drawable/main_button"
         android:shadowColor="#7C000000"
         android:shadowDx="3"
@@ -72,7 +71,7 @@
         android:layout_width="259dp"
         android:layout_height="64dp"
         android:layout_marginTop="52dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/main_button"
         android:shadowColor="#7C000000"
         android:shadowDx="3"
@@ -84,6 +83,25 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAgain" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonAgain"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/highScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        android:shadowColor="#19000000"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAgain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.283" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
