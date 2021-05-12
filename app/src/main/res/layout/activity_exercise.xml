@@ -50,7 +50,7 @@
         android:layout_height="76dp"
         android:layout_marginBottom="60dp"
         android:background="@drawable/main_button"
-        android:backgroundTint="#1CB899"
+        android:backgroundTint="@color/primary"
         android:shadowColor="#7C000000"
         android:shadowDx="3"
         android:shadowDy="3"
