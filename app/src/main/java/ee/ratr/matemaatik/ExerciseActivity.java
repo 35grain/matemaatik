@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -78,12 +79,14 @@ public class ExerciseActivity extends AppCompatActivity {
                         // Show correct solution and temporarily disable buttons
                         score--;
                         answerButton.setEnabled(false);
+                        textInputAnswer.setTextColor(Color.RED);
                         textInputAnswer.setError("Õige vastus oli: " + solution);
                         // Wait 2 seconds and display next equation
                         Handler handler = new Handler();
                         handler.postDelayed(new Runnable() {
                             public void run() {
                                 answerButton.setEnabled(true);
+                                textInputAnswer.setTextColor(Color.WHITE);
                                 textInputAnswer.setText("");
                                 textInputAnswer.setError(null);
                                 userScoreLive.setText(String.valueOf(score));
