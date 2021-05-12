@@ -97,7 +97,7 @@ public class ExerciseActivity extends AppCompatActivity {
                             answerButton.setEnabled(false);
                             answerButton.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.danger)));
                             textInputAnswer.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.danger));
-                            textInputAnswer.setError("Õige vastus oli: " + solution);
+                            textInputAnswer.setError(getResources().getString(R.string.correct_solution_was) + solution);
                             // Wait 2 seconds and display next equation
                             Handler handler = new Handler();
                             handler.postDelayed(new Runnable() {
@@ -135,9 +135,9 @@ public class ExerciseActivity extends AppCompatActivity {
     public void onBackPressed() {
         // Warn before returning to exercise menu
         AlertDialog.Builder alertdialog=new AlertDialog.Builder(this);
-        alertdialog.setTitle("Hoiatus");
-        alertdialog.setMessage("Väljudes kaotad punktid. Kindel, et soovid väljuda?");
-        alertdialog.setPositiveButton("Jah", new DialogInterface.OnClickListener(){
+        alertdialog.setTitle(getResources().getString(R.string.warning));
+        alertdialog.setMessage(getResources().getString(R.string.exercise_exit_warning));
+        alertdialog.setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener(){
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -145,7 +145,7 @@ public class ExerciseActivity extends AppCompatActivity {
             }
         });
 
-        alertdialog.setNegativeButton("Ei", new DialogInterface.OnClickListener(){
+        alertdialog.setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener(){
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -168,7 +168,7 @@ public class ExerciseActivity extends AppCompatActivity {
         String awnserInput = textInputAnswer.getText().toString().trim();
 
         if (awnserInput.isEmpty()) {
-            textInputAnswer.setError("Pole vastust");
+            textInputAnswer.setError(getResources().getString(R.string.no_input));
             return false;
         } else {
             textInputAnswer.setError(null);

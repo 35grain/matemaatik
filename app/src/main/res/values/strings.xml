@@ -18,4 +18,10 @@
     <string name="astendamine">ASTENDAMINE</string>
     <string name="juhuslik">JUHUSLIK</string>
     <string name="github_repo">https://github.com/35grain/matemaatik</string>
+    <string name="no_input">Vastus puudub</string>
+    <string name="correct_solution_was">Õige vastus oli: </string>
+    <string name="warning">Hoiatus</string>
+    <string name="exercise_exit_warning">Väljudes kaotad punktid. Kindel, et soovid väljuda?</string>
+    <string name="yes">Jah</string>
+    <string name="no">Ei</string>
 </resources>
