@@ -46,10 +46,10 @@ public class ExerciseScoreActivity extends AppCompatActivity {
 
         boolean saveScore = false;
         if (score > highScore) {
-            highScoreLabel.setText("Uus parim tulemus!");
+            highScoreLabel.setText(getResources().getString(R.string.new_highscore));
             saveScore = true;
         } else {
-            highScoreLabel.setText("Parim tulemus : " + highScore);
+            highScoreLabel.setText(getResources().getString(R.string.highscore) + " " + highScore);
         }
 
         // back to menu and saving score
@@ -90,7 +90,7 @@ public class ExerciseScoreActivity extends AppCompatActivity {
     private void scoreSaving(boolean saveScore, SharedPreferences sp, int score) {
         if (saveScore) {
             SharedPreferences.Editor editor = sp.edit();
-            editor.putInt("score", score);
+            editor.putInt("HIGH_SCORE", score);
             editor.commit();
         }
     }

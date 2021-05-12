@@ -97,7 +97,7 @@ public class ExerciseActivity extends AppCompatActivity {
                             answerButton.setEnabled(false);
                             answerButton.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.danger)));
                             textInputAnswer.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.danger));
-                            textInputAnswer.setError(getResources().getString(R.string.correct_solution_was) + solution);
+                            textInputAnswer.setError(getResources().getString(R.string.correct_solution_was) + " " + solution);
                             // Wait 2 seconds and display next equation
                             Handler handler = new Handler();
                             handler.postDelayed(new Runnable() {
