@@ -17,4 +17,5 @@
     <string name="jagamine">JAGAMINE</string>
     <string name="astendamine">ASTENDAMINE</string>
     <string name="juhuslik">JUHUSLIK</string>
+    <string name="github_repo">https://github.com/35grain/matemaatik</string>
 </resources>

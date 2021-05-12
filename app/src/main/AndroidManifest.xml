@@ -10,9 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Matemaatik">
         <activity android:name="ee.ratr.matemaatik.ExerciseScoreActivity" android:screenOrientation="portrait" />
-        <activity android:name="ee.ratr.matemaatik.InfoActivity" android:noHistory="true" android:screenOrientation="portrait" />
+        <activity android:name="ee.ratr.matemaatik.InfoActivity" android:screenOrientation="portrait" />
         <activity android:name="ee.ratr.matemaatik.ExerciseActivity" android:screenOrientation="portrait" />
-        <activity android:name="ee.ratr.matemaatik.ExerciseMenuActivity" android:noHistory="true" android:screenOrientation="portrait"/>
+        <activity android:name="ee.ratr.matemaatik.ExerciseMenuActivity" android:screenOrientation="portrait"/>
         <activity android:name="ee.ratr.matemaatik.MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
