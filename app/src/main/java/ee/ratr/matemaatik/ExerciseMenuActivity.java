@@ -3,7 +3,6 @@ package ee.ratr.matemaatik;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.app.TaskStackBuilder;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,9 +11,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
-import android.widget.TextView;
-
-import ee.ratr.matemaatik.R;
 
 public class ExerciseMenuActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String EXTRA_TEXT = "ee.ratr.matemaatik.EXTRA_TEXT";
@@ -88,7 +84,7 @@ public class ExerciseMenuActivity extends AppCompatActivity implements View.OnCl
             default:
                 break;
         }
-        toExercise();
+        toExerciseSettings();
     }
 
     private void backToLastPage() {
@@ -97,8 +93,8 @@ public class ExerciseMenuActivity extends AppCompatActivity implements View.OnCl
         finish();
     }
 
-    private void toExercise() {
-        Intent intent = new Intent(this, ExerciseActivity.class);
+    private void toExerciseSettings() {
+        Intent intent = new Intent(this, ExerciseSettingsActivity.class);
         intent.putExtra(EXTRA_TEXT, exerciseType);
         startActivity(intent);
     }

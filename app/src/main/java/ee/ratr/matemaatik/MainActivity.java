@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
-import ee.ratr.matemaatik.R;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -22,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         // button to Exercise Menu Activity
-        Button buttonToExerciseMenu = findViewById(R.id.buttonExerciseMenu);
+        Button buttonToExerciseMenu = findViewById(R.id.buttonToExercise);
         buttonToExerciseMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

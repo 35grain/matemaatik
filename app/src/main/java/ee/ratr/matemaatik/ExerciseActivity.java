@@ -36,6 +36,8 @@ public class ExerciseActivity extends AppCompatActivity {
     @SuppressLint("StaticFieldLeak")
     private static ExerciseActivity instance;
     String exerciseType;
+    int max;
+    int difficulty;
 
     @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -51,11 +53,15 @@ public class ExerciseActivity extends AppCompatActivity {
 
         // list of random adding exercises
         Intent intent = getIntent();
-        exerciseType = intent.getStringExtra(ExerciseMenuActivity.EXTRA_TEXT);
-        int max = 3;
+        exerciseType = intent.getStringExtra("exercise");
+        max = intent.getIntExtra("MAX_VALUE", 0);
+        difficulty = intent.getIntExtra("DIFFICULTY", 0);
+
+        int[] upperLower = difficultyUpperLower(difficulty);
+
         ArrayList<Equation> equations = new ArrayList<Equation>();
         for (int i = 0; i < max; i++) {
-            equations.add(typeOfExercise(exerciseType, 50, 40));
+            equations.add(typeOfExercise(exerciseType, upperLower[1], upperLower[0]));
         }
 
         // exercise counter default
@@ -133,39 +139,18 @@ public class ExerciseActivity extends AppCompatActivity {
         });
     }
 
-    private boolean validateAnswer() {
-        String awnserInput = textInputAnswer.getText().toString().trim();
-        if (awnserInput.isEmpty()) {
-            textInputAnswer.setError("Pole vastust");
-            return false;
-        } else {
-            textInputAnswer.setError(null);
-            return true;
-        }
+    private void toScorePage() {
+        Intent intent = new Intent(this, ExerciseScoreActivity.class);
+        intent.putExtra("EXERCISE_TYPE", exerciseType);
+        intent.putExtra("EXERCISE_AMOUNT", max);
+        intent.putExtra("DIFFICULTY", difficulty);
+        startActivity(intent);
     }
 
-    private boolean checkAnswer(int userAnswer) {
-        int answerInput = Integer.parseInt(textInputAnswer.getText().toString().trim());
-        return answerInput == userAnswer;
-    }
-
-    private Equation typeOfExercise(String userClickedInMenu, int upperLimit, int lowerLimit) {
-        switch (userClickedInMenu) {
-            case "a":
-                return new Add(upperLimit, lowerLimit);
-            case "s":
-                return new Subtract(upperLimit, lowerLimit);
-            case "m":
-                return new Multiply(upperLimit, lowerLimit);
-            case "d":
-                return new Divide(upperLimit, lowerLimit);
-            case "e":
-                return new Exponentiate(upperLimit, lowerLimit);
-            case "r":
-                return new Random(upperLimit, lowerLimit);
-            default:
-                return null;
-        }
+    private void backToLastPage() {
+        Intent intent = new Intent(this, ExerciseMenuActivity.class);
+        intent.putExtra("EXERCISE_TYPE", exerciseType);
+        startActivity(intent);
     }
 
     public void onBackPressed() {
@@ -192,14 +177,60 @@ public class ExerciseActivity extends AppCompatActivity {
         alertdialog.show();
     }
 
-    private void toScorePage() {
-        Intent intent = new Intent(this, ExerciseScoreActivity.class);
-        startActivity(intent);
+    private boolean validateAnswer() {
+        String awnserInput = textInputAnswer.getText().toString().trim();
+        if (awnserInput.isEmpty()) {
+            textInputAnswer.setError("Pole vastust");
+            return false;
+        } else {
+            textInputAnswer.setError(null);
+            return true;
+        }
     }
 
-    private void backToLastPage() {
-        Intent intent = new Intent(this, ExerciseMenuActivity.class);
-        startActivity(intent);
+    private boolean checkAnswer(int userAnswer) {
+        int answerInput = Integer.parseInt(textInputAnswer.getText().toString().trim());
+        return answerInput == userAnswer;
+    }
+
+    private int[] difficultyUpperLower(int level) {
+        int[] upperLower = new int[2];
+
+        switch (level) {
+            case 0:
+                upperLower[0] = 2;
+                upperLower[1] = 15;
+                break;
+            case 1:
+                upperLower[0] = 10;
+                upperLower[1] = 40;
+                break;
+            case 2:
+                upperLower[0] = 30;
+                upperLower[1] = 100;
+                break;
+        }
+        return upperLower;
+    }
+
+    private Equation typeOfExercise(String userClickedInMenu, int upperLimit, int lowerLimit) {
+        switch (userClickedInMenu) {
+            case "a":
+                return new Add(upperLimit, lowerLimit);
+            case "s":
+                return new Subtract(upperLimit, lowerLimit);
+            case "m":
+                return new Multiply(upperLimit, lowerLimit);
+            case "d":
+                return new Divide(upperLimit, lowerLimit);
+            case "e":
+                return new Exponentiate(upperLimit, lowerLimit);
+            case "r":
+                return new Random(upperLimit, lowerLimit);
+            default:
+                Log.d("viga", "siin");
+                return null;
+        }
     }
 
     public static ExerciseActivity getInstance() {

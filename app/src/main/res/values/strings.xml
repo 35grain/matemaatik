@@ -18,4 +18,8 @@
     <string name="astendamine">ASTENDAMINE</string>
     <string name="juhuslik">JUHUSLIK</string>
     <string name="github_repo">https://github.com/35grain/matemaatik</string>
+    <string name="harjutused">HARJUTUSED</string>
+    <string name="kerge">Kerge</string>
+    <string name="lesannete_arv_10">Ülesannete arv: 10</string>
+    <string name="lihtne">Lihtne</string>
 </resources>
