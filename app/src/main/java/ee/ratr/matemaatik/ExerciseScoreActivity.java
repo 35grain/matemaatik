@@ -17,6 +17,9 @@ public class ExerciseScoreActivity extends AppCompatActivity {
     int exAmount;
     int exDifficulty;
     String saveHighScore;
+    boolean finalSaveScore;
+    SharedPreferences sp;
+    int score;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -30,7 +33,7 @@ public class ExerciseScoreActivity extends AppCompatActivity {
 
 
         // displaying user score
-        int score = ExerciseActivity.getInstance().getScore();
+        score = ExerciseActivity.getInstance().getScore();
         TextView textViewChange = findViewById(R.id.userScoreDisplay);
         textViewChange.setText(String.valueOf(score));
 
@@ -44,7 +47,7 @@ public class ExerciseScoreActivity extends AppCompatActivity {
         saveHighScore = exerciseDifficulty(exDifficulty, amountOfExercise(exAmount, typeOfExercise(exType)));
 
         TextView highScoreLabel = findViewById(R.id.highScore);
-        SharedPreferences sp = getSharedPreferences(saveHighScore, Context.MODE_PRIVATE);
+        sp = getSharedPreferences(saveHighScore, Context.MODE_PRIVATE);
         int highScore = sp.getInt(saveHighScore, -10000);
 
         boolean saveScore = false;
@@ -56,7 +59,7 @@ public class ExerciseScoreActivity extends AppCompatActivity {
         }
 
         // back to menu and saving score
-        boolean finalSaveScore = saveScore;
+        finalSaveScore = saveScore;
         Button buttonToExerciseMenu = (Button) findViewById(R.id.buttonToExercise);
         buttonToExerciseMenu.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
@@ -76,6 +79,11 @@ public class ExerciseScoreActivity extends AppCompatActivity {
                 redoExercise();
             }
         });
+    }
+
+    public void onBackPressed() {
+        scoreSaving(finalSaveScore, sp, score);
+        openExerciseMenu();
     }
 
     public void openExerciseMenu() {
