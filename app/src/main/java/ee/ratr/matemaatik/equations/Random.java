@@ -1,6 +1,8 @@
 package ee.ratr.matemaatik.equations;
 
-public class Random {
+import ee.ratr.matemaatik.R;
+
+public class Random extends Equation {
     private Equation equation;
 
     public Random(int upperLimit, int lowerLimit) {
@@ -27,8 +29,13 @@ public class Random {
         return equation;
     }
 
-    int getSolution() {
+    public int getSolution() {
         return equation.getSolution();
+    }
+
+    @Override
+    int[] generateVars(int upperLimit, int lowerLimit) {
+        return new int[0];
     }
 
     @Override

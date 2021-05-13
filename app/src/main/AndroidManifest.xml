@@ -9,11 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Matemaatik">
-        <activity android:name="ee.ratr.matemaatik.ExerciseScoreActivity" android:screenOrientation="portrait" />
-        <activity android:name="ee.ratr.matemaatik.InfoActivity" android:screenOrientation="portrait" />
-        <activity android:name="ee.ratr.matemaatik.ExerciseActivity" android:screenOrientation="portrait" />
-        <activity android:name="ee.ratr.matemaatik.ExerciseMenuActivity" android:screenOrientation="portrait"/>
-        <activity android:name="ee.ratr.matemaatik.MainActivity" android:screenOrientation="portrait">
+        <activity android:name=".ExerciseSettingsActivity"></activity>
+        <activity
+            android:name=".ExerciseScoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ExerciseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ExerciseMenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
