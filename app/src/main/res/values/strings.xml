@@ -8,7 +8,7 @@
     <string name="testing">TextView</string>
     <string name="vasta">VASTA</string>
     <string name="_0">0</string>
-    <string name="matemaatik_version">Matemaatik 1.1.0</string>
+    <string name="matemaatik_version">Matemaatik 1.2.0</string>
     <string name="tagasi">TAGASI</string>
     <string name="uuesti">UUESTI</string>
     <string name="skoor">SKOOR</string>
@@ -26,4 +26,7 @@
     <string name="no">Ei</string>
     <string name="new_highscore">Uus parim tulemus!</string>
     <string name="highscore">Parim tulemus:</string>
+    <string name="lesannete_arv_10">Ülesannete arv: 10</string>
+    <string name="lihtne">Lihtne</string>
+    <string name="harjutused">HARJUTUSED</string>
 </resources>

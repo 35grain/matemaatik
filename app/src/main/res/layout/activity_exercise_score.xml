@@ -47,7 +47,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.48" />
 
     <Button
         android:id="@+id/buttonAgain"
@@ -67,7 +68,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/buttonExerciseMenu"
+        android:id="@+id/buttonToExercise"
         android:layout_width="259dp"
         android:layout_height="64dp"
         android:layout_marginTop="52dp"
