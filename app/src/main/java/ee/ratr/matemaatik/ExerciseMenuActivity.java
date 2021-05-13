@@ -87,6 +87,8 @@ public class ExerciseMenuActivity extends AppCompatActivity implements View.OnCl
         toExerciseSettings();
     }
 
+    public void onBackPressed() { backToLastPage(); }
+
     private void backToLastPage() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
