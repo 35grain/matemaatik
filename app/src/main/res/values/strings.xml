@@ -8,7 +8,7 @@
     <string name="testing">TextView</string>
     <string name="vasta">VASTA</string>
     <string name="_0">0</string>
-    <string name="matemaatik_1_0_0_beta">Matemaatik 1.0.0 (beta)</string>
+    <string name="matemaatik_version">Matemaatik 1.1.0</string>
     <string name="tagasi">TAGASI</string>
     <string name="uuesti">UUESTI</string>
     <string name="skoor">SKOOR</string>
@@ -18,8 +18,12 @@
     <string name="astendamine">ASTENDAMINE</string>
     <string name="juhuslik">JUHUSLIK</string>
     <string name="github_repo">https://github.com/35grain/matemaatik</string>
-    <string name="harjutused">HARJUTUSED</string>
-    <string name="kerge">Kerge</string>
-    <string name="lesannete_arv_10">Ülesannete arv: 10</string>
-    <string name="lihtne">Lihtne</string>
+    <string name="no_input">Vastus puudub</string>
+    <string name="correct_solution_was">Õige vastus oli:</string>
+    <string name="warning">Hoiatus</string>
+    <string name="exercise_exit_warning">Väljudes kaotad punktid. Kindel, et soovid väljuda?</string>
+    <string name="yes">Jah</string>
+    <string name="no">Ei</string>
+    <string name="new_highscore">Uus parim tulemus!</string>
+    <string name="highscore">Parim tulemus:</string>
 </resources>
