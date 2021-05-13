@@ -102,18 +102,18 @@ public class ExerciseActivity extends AppCompatActivity {
                         }
                     } else {
                         // Show correct solution and temporarily disable buttons
-                        if (i >= max)
-                            toScorePage();
-                        else {
-                            score -= 2;
-                            answerButton.setEnabled(false);
-                            answerButton.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.danger)));
-                            textInputAnswer.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.danger));
-                            textInputAnswer.setError("Õige vastus oli: " + solution);
-                            // Wait 2 seconds and display next equation
-                            Handler handler = new Handler();
-                            handler.postDelayed(new Runnable() {
-                                public void run() {
+                        score -= 2;
+                        answerButton.setEnabled(false);
+                        answerButton.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.danger)));
+                        textInputAnswer.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.danger));
+                        textInputAnswer.setError("Õige vastus oli: " + solution);
+                        // Wait 2 seconds and display next equation
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            public void run() {
+                                if (i >= max) {
+                                    toScorePage();
+                                } else {
                                     answerButton.setEnabled(true);
                                     answerButton.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.primary)));
                                     textInputAnswer.setTextColor(Color.WHITE);
@@ -122,8 +122,8 @@ public class ExerciseActivity extends AppCompatActivity {
                                     userScoreLive.setText(String.valueOf(score));
                                     textViewChange.setText(equations.get(i).toString());
                                 }
-                            }, 2000);
-                        }
+                            }
+                        }, 2000);
                     }
                 }
             }
